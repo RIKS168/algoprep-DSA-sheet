@@ -1,0 +1,23 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+      // k value calculate
+    if(k>nums.length){
+        k=k%nums.length;
+    }
+    // create new array  
+    int[]result=new int [nums.length];
+    for(int i=0;i<k;i++){
+      // half values put  in new array
+        result[i]=nums[nums.length-k+i];
+    }
+    int j=0;
+    for(int i=k;i<nums.length;i++){
+        result[i]=nums[j];
+        j++;
+    }
+      // copy
+System.arraycopy(result,0,nums,0,nums.length);
+
+
+    }
+}
